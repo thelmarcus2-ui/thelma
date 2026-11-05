@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiteSavvy | Marcus Chigbu Thelma - Full Stack Web Architect</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090d16',
+                        darkCard: '#0f172a',
+                        darkBorder: '#1e293b',
+                        cyanGlow: '#06b6d4',
+                        blueGlow: '#3b82f6',
+                        emeraldGlow: '#10b981'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #090d16;
+            color: #e2e8f0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-slate-900">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-40 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center font-bold text-white text-xl shadow-lg glow-effect">
+                        S
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-white block">SiteSavvy</span>
+                        <span class="text-xs text-cyan-400 block font-medium">Marcus Chigbu Thelma</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#services" class="hover:text-cyan-400 transition-colors">Services</a>
+                    <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                    <a href="#calculator" class="hover:text-cyan-400 transition-colors">Pricing & Estimator</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full gradient-bg text-white font-semibold hover:opacity-90 transition-opacity glow-effect">Let's Talk</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden md:hidden glass-card border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-md hover:bg-slate-800 font-medium">About</a>
+            <a href="#services" class="block px-3 py-2 rounded-md hover:bg-slate-800 font-medium">Services</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-slate-800 font-medium">Projects</a>
+            <a href="#calculator" class="block px-3 py-2 rounded-md hover:bg-slate-800 font-medium">Pricing & Estimator</a>
+            <a href="#contact" class="block text-center px-4 py-2.5 rounded-xl gradient-bg text-white font-semibold glow-effect">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-28 pb-16 space-y-24">
+
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card border border-cyan-500/30 text-cyan-400 text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Established Digital Solutions · Remote, Nigeria</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        We build <span class="gradient-text">digital products</span> that move businesses forward.
+                    </h1>
+                    <p class="text-slate-400 text-lg sm:text-xl leading-relaxed">
+                        Hi, I'm <strong class="text-slate-200">Marcus Chigbu Thelma</strong>, founder of <span class="text-cyan-400 font-semibold">SiteSavvy</span>. We help businesses turn ideas into modern websites, mobile apps, custom software, and growth-focused digital platforms starting from <strong class="text-emerald-400">$100 upwards</strong>.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+                        <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl gradient-bg text-white font-bold text-base hover:opacity-90 transition-all glow-effect flex items-center justify-center space-x-2">
+                            <span>Start a Project</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-slate-200 font-semibold hover:border-cyan-500/50 transition-all flex items-center justify-center space-x-2">
+                            <span>Explore Services</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Side Graphic Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card p-8 rounded-3xl border border-cyan-500/30 space-y-6 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center text-white text-3xl font-bold shadow-lg glow-effect">
+                            S
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Build • Innovate • Grow</h3>
+                        <p class="text-slate-400 text-sm">Your technology partner for a smarter digital future, delivering high-performance platforms worldwide.</p>
+                        <div class="grid grid-cols-2 gap-3 pt-2">
+                            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                                <b class="block text-cyan-400 text-sm">Web</b>
+                                <span class="text-xs text-slate-400">Fast & responsive</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                                <b class="block text-cyan-400 text-sm">Apps</b>
+                                <span class="text-xs text-slate-400">Android & iOS</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                                <b class="block text-cyan-400 text-sm">Software</b>
+                                <span class="text-xs text-slate-400">Custom solutions</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                                <b class="block text-cyan-400 text-sm">Starting</b>
+                                <span class="text-xs text-emerald-400 font-bold">$100 Upwards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Counter Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400">100%</div>
+                    <div class="text-xs sm:text-sm text-slate-400 mt-1">Client Satisfaction</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400">15+</div>
+                    <div class="text-xs sm:text-sm text-slate-400 mt-1">Projects Deployed</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400">$100+</div>
+                    <div class="text-xs sm:text-sm text-slate-400 mt-1">Starting Rate</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400">Remote</div>
+                    <div class="text-xs sm:text-sm text-slate-400 mt-1">Nigeria & Global</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do / Services Section -->
+        <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">What we do</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Everything you need to grow digitally.</h2>
+                <p class="text-slate-400 text-sm sm:text-base">From first idea to launch and growth, we create practical digital solutions around your business goals.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-2xl hover:border-cyan-500/50 transition-all space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-lg border border-cyan-500/20">&lt;/&gt;</div>
+                    <h3 class="text-xl font-bold text-white">Web Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Modern, responsive and conversion-focused websites built for performance, scale, and mobile devices.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl hover:border-cyan-500/50 transition-all space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm border border-cyan-500/20">APP</div>
+                    <h3 class="text-xl font-bold text-white">Mobile App Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">User-friendly Android and iOS apps with clean experiences and reliable performance.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl hover:border-cyan-500/50 transition-all space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-lg border border-cyan-500/20">S</div>
+                    <h3 class="text-xl font-bold text-white">Software Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Custom business software, dashboards and digital systems designed around your workflow.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl hover:border-cyan-500/50 transition-all space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-lg border border-cyan-500/20">↗</div>
+                    <h3 class="text-xl font-bold text-white">Digital Marketing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Social media, content and growth strategies designed to build reach and customer engagement.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl hover:border-cyan-500/50 transition-all space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm border border-cyan-500/20">UX</div>
+                    <h3 class="text-xl font-bold text-white">UI/UX Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Simple, attractive and intuitive interfaces that make products easier to understand and use.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl hover:border-cyan-500/50 transition-all space-y-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm border border-cyan-500/20">AI</div>
+                    <h3 class="text-xl font-bold text-white">AI & Automation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Smart automation and AI-assisted workflows to reduce repetitive work and unlock new possibilities.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">About SiteSavvy</span>
+                    <h2 class="text-3xl font-bold text-white">Built for ideas. Designed for growth.</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        SiteSavvy is a technology and digital solutions practice founded by <strong>Marcus Chigbu Thelma</strong>, focused on helping businesses build a strong, professional digital presence.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        We combine technology, creativity, and business thinking to deliver solutions that are useful, scalable, and fully responsive across all mobile phones and devices.
+                    </p>
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                        <div class="flex items-center space-x-2 text-sm text-slate-300 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span><span>Modern Technology</span></div>
+                        <div class="flex items-center space-x-2 text-sm text-slate-300 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span><span>Business-Focused</span></div>
+                        <div class="flex items-center space-x-2 text-sm text-slate-300 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span><span>Scalable Solutions</span></div>
+                        <div class="flex items-center space-x-2 text-sm text-slate-300 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span><span>Reliable Support</span></div>
+                    </div>
+                </div>
+                <div class="bg-slate-900/80 p-8 rounded-2xl border border-cyan-500/30 space-y-4">
+                    <h3 class="text-xl font-bold text-white">Technology should make business simpler.</h3>
+                    <p class="text-slate-400 text-sm">That is the core philosophy behind SiteSavvy. Every project is crafted with clean architecture and lightning-fast speeds.</p>
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-medium text-slate-300">Founder & Lead Developer</span>
+                        <span class="text-sm font-bold text-cyan-400">Marcus Chigbu Thelma</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Showcase -->
+        <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Featured Portfolio</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Products built by SiteSavvy.</h2>
+                <p class="text-slate-400">Explore recent web applications, business suites, and custom systems crafted for clients.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&fit=crop" alt="E-Commerce App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Full-Stack Web App</span>
+                        <h3 class="text-xl font-bold text-white">E-Commerce Management Hub</h3>
+                        <p class="text-slate-400 text-sm">Complete digital store with inventory dashboard, cart processing, and secure automated checkouts.</p>
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="text-sm font-semibold text-emerald-400">From $250</span>
+                            <button onclick="openModal('E-Commerce Hub', 'Full-stack online shop platform with order tracking, admin controls, and integrated instant notifications.')" class="text-sm text-cyan-400 font-medium hover:underline flex items-center space-x-1">
+                                <span>Details</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&fit=crop" alt="Corporate Site" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Corporate & Business</span>
+                        <h3 class="text-xl font-bold text-white">Modern Business Suite</h3>
+                        <p class="text-slate-400 text-sm">Responsive multi-page agency site with fast page load times, custom graphics, and integrated contact leads.</p>
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="text-sm font-semibold text-emerald-400">From $100</span>
+                            <button onclick="openModal('Modern Business Suite', 'Sleek business landing platform designed to maximize client lead conversions and display services clearly.')" class="text-sm text-cyan-400 font-medium hover:underline flex items-center space-x-1">
+                                <span>Details</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&fit=crop" alt="Task Portal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">SaaS & Dashboard</span>
+                        <h3 class="text-xl font-bold text-white">Task Management Portal</h3>
+                        <p class="text-slate-400 text-sm">Interactive team workflow tracker featuring real-time data sync, user roles, and responsive dashboards.</p>
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="text-sm font-semibold text-emerald-400">From $300</span>
+                            <button onclick="openModal('Task Management Portal', 'SaaS application engineered for remote team collaboration with real-time status updates and activity logs.')" class="text-sm text-cyan-400 font-medium hover:underline flex items-center space-x-1">
+                                <span>Details</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Process Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Our process</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Simple process. Clear communication.</h2>
+                <p class="text-slate-400">We keep projects practical, transparent and focused on outcomes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="text-xs font-bold text-cyan-400 uppercase tracking-widest">01 · DISCOVER</div>
+                    <h3 class="text-lg font-bold text-white">Understand</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">We learn about your idea, business and goals.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="text-xs font-bold text-cyan-400 uppercase tracking-widest">02 · PLAN</div>
+                    <h3 class="text-lg font-bold text-white">Design</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">We shape the solution, experience and roadmap.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="text-xs font-bold text-cyan-400 uppercase tracking-widest">03 · BUILD</div>
+                    <h3 class="text-lg font-bold text-white">Develop</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">We build, test and refine the product.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="text-xs font-bold text-cyan-400 uppercase tracking-widest">04 · GROW</div>
+                    <h3 class="text-lg font-bold text-white">Launch & Support</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm">We launch and help you improve over time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Project Cost Estimator ($100 Upwards) -->
+        <section id="calculator" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card p-6 sm:p-10 rounded-3xl border border-slate-700/50 shadow-2xl space-y-8">
+                <div class="text-center space-y-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Interactive Estimator</span>
+                    <h2 class="text-3xl font-bold text-white">Estimate Your Project Cost</h2>
+                    <p class="text-slate-400 text-sm">Custom project packages starting from <strong>$100 upwards</strong>.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Base Type Selection -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-3">1. Select Project Type</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button type="button" onclick="setBasePrice(100, this)" class="type-btn p-4 rounded-xl glass-card border border-cyan-500/50 text-center hover:border-cyan-400 transition-all font-medium text-white active-type">
+                                <div class="text-sm">Landing Page</div>
+                                <div class="text-xs text-cyan-400 font-bold mt-1">$100 Base</div>
+                            </button>
+                            <button type="button" onclick="setBasePrice(250, this)" class="type-btn p-4 rounded-xl glass-card border border-slate-800 text-center hover:border-cyan-400 transition-all font-medium text-slate-300">
+                                <div class="text-sm">Full Business Site</div>
+                                <div class="text-xs text-cyan-400 font-bold mt-1">$250 Base</div>
+                            </button>
+                            <button type="button" onclick="setBasePrice(450, this)" class="type-btn p-4 rounded-xl glass-card border border-slate-800 text-center hover:border-cyan-400 transition-all font-medium text-slate-300">
+                                <div class="text-sm">Custom Web App</div>
+                                <div class="text-xs text-cyan-400 font-bold mt-1">$450 Base</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Page Counter -->
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>2. Number of Pages</span>
+                            <span id="page-count-val" class="text-cyan-400">1 Page</span>
+                        </div>
+                        <input type="range" id="page-range" min="1" max="15" value="1" oninput="calculateTotal()" class="w-full accent-cyan-400 bg-slate-800 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Add-ons -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-3">3. Optional Modules & Add-Ons</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded-xl glass-card border border-slate-800 cursor-pointer hover:border-slate-700">
+                                <input type="checkbox" value="30" onchange="calculateTotal()" class="addon-check w-4 h-4 text-cyan-500 rounded accent-cyan-400">
+                                <span class="text-sm text-slate-300">User Authentication ($30)</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded-xl glass-card border border-slate-800 cursor-pointer hover:border-slate-700">
+                                <input type="checkbox" value="50" onchange="calculateTotal()" class="addon-check w-4 h-4 text-cyan-500 rounded accent-cyan-400">
+                                <span class="text-sm text-slate-300">Payment Gateway ($50)</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded-xl glass-card border border-slate-800 cursor-pointer hover:border-slate-700">
+                                <input type="checkbox" value="25" onchange="calculateTotal()" class="addon-check w-4 h-4 text-cyan-500 rounded accent-cyan-400">
+                                <span class="text-sm text-slate-300">SEO Optimization ($25)</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded-xl glass-card border border-slate-800 cursor-pointer hover:border-slate-700">
+                                <input type="checkbox" value="40" onchange="calculateTotal()" class="addon-check w-4 h-4 text-cyan-500 rounded accent-cyan-400">
+                                <span class="text-sm text-slate-300">Admin Dashboard ($40)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Display -->
+                <div class="p-6 rounded-2xl bg-slate-900/90 border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs uppercase text-slate-400 font-bold block">Estimated Total</span>
+                        <div id="total-price" class="text-4xl font-extrabold text-cyan-400">$100</div>
+                    </div>
+                    <a href="https://wa.me/2347039034523?text=Hello%20Marcus,%20I'd%20like%20to%20discuss%20a%20project%20estimate." target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-xl gradient-bg text-white font-bold hover:opacity-90 transition-opacity text-center flex items-center justify-center space-x-2 shadow-lg">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        <span>Lock In Estimate</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Direct Contact Section -->
+        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Let's work together</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Have an idea? Let's turn it into reality.</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        Tell us what you want to build. We'll help you choose the right digital solution for your business starting from $100+.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-cyan-400">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">Direct Email</span>
+                                <a href="mailto:thelmamarcus2@gmail.com" class="text-base font-semibold text-white hover:text-cyan-400 transition-colors">thelmamarcus2@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-cyan-400">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">Call Line</span>
+                                <a href="tel:08026364319" class="text-base font-semibold text-white hover:text-cyan-400 transition-colors">08026364319 (+234 802 636 4319)</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-cyan-400">
+                                <i data-lucide="message-square" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">WhatsApp Line</span>
+                                <a href="https://wa.me/2347039034523" target="_blank" class="text-base font-semibold text-white hover:text-cyan-400 transition-colors">07039034523 (+234 703 903 4523)</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-cyan-400">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block">Location</span>
+                                <span class="text-base font-semibold text-white">Remote, Nigeria</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form / Quick Action Options -->
+                <div class="space-y-6">
+                    <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4">
+                        <h3 class="text-lg font-bold text-white">What do you want to build?</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://wa.me/2347039034523?text=Hello%20Marcus,%20I%20am%20interested%20in%20Web%20Development." target="_blank" class="px-3 py-2 rounded-lg bg-slate-800 text-xs font-medium text-cyan-400 hover:bg-slate-700 transition-colors">Web Development</a>
+                            <a href="https://wa.me/2347039034523?text=Hello%20Marcus,%20I%20am%20interested%20in%20Mobile%20App." target="_blank" class="px-3 py-2 rounded-lg bg-slate-800 text-xs font-medium text-cyan-400 hover:bg-slate-700 transition-colors">Mobile App</a>
+                            <a href="https://wa.me/2347039034523?text=Hello%20Marcus,%20I%20am%20interested%20in%20Software." target="_blank" class="px-3 py-2 rounded-lg bg-slate-800 text-xs font-medium text-cyan-400 hover:bg-slate-700 transition-colors">Software</a>
+                            <a href="https://wa.me/2347039034523?text=Hello%20Marcus,%20I%20am%20interested%20in%20UI/UX%20Design." target="_blank" class="px-3 py-2 rounded-lg bg-slate-800 text-xs font-medium text-cyan-400 hover:bg-slate-700 transition-colors">UI/UX Design</a>
+                            <a href="https://wa.me/2347039034523?text=Hello%20Marcus,%20I%20am%20interested%20in%20AI%20Automation." target="_blank" class="px-3 py-2 rounded-lg bg-slate-800 text-xs font-medium text-cyan-400 hover:bg-slate-700 transition-colors">AI & Automation</a>
+                        </div>
+                    </div>
+
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white focus:border-cyan-500 focus:outline-none transition-colors text-sm" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <input type="email" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white focus:border-cyan-500 focus:outline-none transition-colors text-sm" placeholder="Email Address">
+                        </div>
+                        <div>
+                            <textarea rows="3" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white focus:border-cyan-500 focus:outline-none transition-colors text-sm" placeholder="Tell me about your project goals..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl gradient-bg text-white font-bold hover:opacity-90 transition-opacity glow-effect text-sm">
+                            Send Enquiry Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-4">
+                <span class="text-xl font-bold text-white block">Site<span class="text-cyan-400">Savvy</span></span>
+                <p class="text-slate-400 text-xs">“Your Idea. Our Technology. One Digital Future.”</p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-white mb-3">Quick Links</h4>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><a href="#about" class="hover:text-cyan-400">About</a></li>
+                    <li><a href="#services" class="hover:text-cyan-400">Services</a></li>
+                    <li><a href="#projects" class="hover:text-cyan-400">Projects</a></li>
+                    <li><a href="#calculator" class="hover:text-cyan-400">Pricing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-white mb-3">Services</h4>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><a href="#services" class="hover:text-cyan-400">Web Development</a></li>
+                    <li><a href="#services" class="hover:text-cyan-400">Mobile Apps</a></li>
+                    <li><a href="#services" class="hover:text-cyan-400">Custom Software</a></li>
+                    <li><a href="#services" class="hover:text-cyan-400">UI/UX Design</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-white mb-3">Contact</h4>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><a href="mailto:thelmamarcus2@gmail.com" class="hover:text-cyan-400">thelmamarcus2@gmail.com</a></li>
+                    <li><a href="tel:08026364319" class="hover:text-cyan-400">Call: 08026364319</a></li>
+                    <li><a href="https://wa.me/2347039034523" class="hover:text-cyan-400">WhatsApp: 07039034523</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <div>© 2026 <strong>SiteSavvy</strong> — Marcus Chigbu Thelma. All rights reserved.</div>
+            <div>Build • Innovate • Grow</div>
+        </div>
+    </footer>
+
+    <!-- Floating Live Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div id="chat-popup" class="hidden mb-4 w-72 glass-card rounded-2xl p-4 border border-cyan-500/30 shadow-2xl">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div class="flex items-center space-x-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-sm font-bold text-white">Live Direct Chat</span>
+                </div>
+                <button onclick="toggleChat()" class="text-slate-400 hover:text-white">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+            <p class="text-xs text-slate-300 my-3">Hi! Need a quote or have a web question? Connect directly with Marcus:</p>
+            <div class="space-y-2">
+                <a href="https://wa.me/2347039034523?text=Hello%20Marcus,%20I'm%20reaching%20out%20from%20your%20portfolio." target="_blank" class="block text-center py-2 px-3 rounded-lg bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-semibold text-xs hover:bg-emerald-600/50 transition-colors">
+                    Chat via WhatsApp (07039034523)
+                </a>
+                <a href="tel:08026364319" class="block text-center py-2 px-3 rounded-lg bg-slate-800 text-slate-200 font-semibold text-xs hover:bg-slate-700 transition-colors">
+                    Call Line (08026364319)
+                </a>
+            </div>
+        </div>
+
+        <button onclick="toggleChat()" class="w-14 h-14 rounded-full gradient-bg text-white flex items-center justify-center shadow-xl glow-effect hover:scale-105 transition-transform">
+            <i data-lucide="message-circle" class="w-7 h-7"></i>
+        </button>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card rounded-2xl p-6 sm:p-8 max-w-lg w-full border border-slate-800 space-y-4 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+            <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed"></p>
+            <div class="pt-4 border-t border-slate-800 flex justify-end">
+                <a href="#contact" onclick="closeModal()" class="px-5 py-2.5 rounded-xl gradient-bg text-white font-semibold text-sm glow-effect">Inquire About Similar Project</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile drawer toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const drawer = document.getElementById('mobile-drawer');
+        menuBtn.addEventListener('click', () => {
+            drawer.classList.toggle('hidden');
+        });
+
+        // Live Chat Widget
+        function toggleChat() {
+            const popup = document.getElementById('chat-popup');
+            popup.classList.toggle('hidden');
+        }
+
+        // Project Modal
+        function openModal(title, desc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+
+        // Estimator Calculation Logic
+        let basePrice = 100;
+
+        function setBasePrice(val, btn) {
+            basePrice = val;
+            document.querySelectorAll('.type-btn').forEach(b => {
+                b.classList.remove('border-cyan-500/50', 'text-white', 'active-type');
+                b.classList.add('border-slate-800', 'text-slate-300');
+            });
+            btn.classList.remove('border-slate-800', 'text-slate-300');
+            btn.classList.add('border-cyan-500/50', 'text-white', 'active-type');
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            const pageRange = parseInt(document.getElementById('page-range').value);
+            document.getElementById('page-count-val').innerText = pageRange + (pageRange === 1 ? ' Page' : ' Pages');
+            
+            let extraPagesCost = (pageRange - 1) * 10;
+            
+            let addOnsTotal = 0;
+            document.querySelectorAll('.addon-check:checked').forEach(chk => {
+                addOnsTotal += parseInt(chk.value);
+            });
+
+            let finalTotal = basePrice + extraPagesCost + addOnsTotal;
+            document.getElementById('total-price').innerText = '$' + finalTotal;
+        }
+
+        // Form Submission Simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent to Marcus. You will receive a response shortly.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
